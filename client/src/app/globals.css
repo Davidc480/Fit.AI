@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --bg-color: 44, 37, 146, 0.7;
+  --bg-black: 0, 0, 0, 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,3 +30,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+      @layer utilities {
+        .bg-gradient-radial {
+            background: radial-gradient(50% 50.00% at 50% 50.00%, rgb(var(--bg-color)),  rgb(var(--bg-black)));
+        }
+      }
