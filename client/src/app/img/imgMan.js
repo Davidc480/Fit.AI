@@ -1,0 +1,8 @@
+const imgMans = [
+  "https://us.123rf.com/450wm/tommisch/tommisch1605/tommisch160500169/57388958-hombre-atl%C3%A9tico-mostrando-cuerpo-musculoso-y-haciendo-ejercicios-con-pesas-sobre-fondo-negro.jpg?ver=6",
+  "https://www.boldtribe.com/cdn/shop/articles/Entrenamiento_De_Espalda_En_Casa_Para_Mejorar_Su_Postura_480x.jpg?v=1621475288",
+  "https://s2.best-wallpaper.net/wallpaper/iphone/1910/Man-muscle-dumbbells-black-background_iphone_1080x1920.jpg",
+  "https://media.gq.com.mx/photos/62863225500ac81936c484e4/16:9/w_2560%2Cc_limit/pesas.jpg",
+];
+
+export default imgMans;

@@ -1,5 +1,6 @@
 import Header from "@/Components/Header/Header";
 import Carrousel from "@/Components/Carrousel/Carrousel";
+import imgMans from "@/app/img/imgMan";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <Header />
       </div>
       <div>
-        <Carrousel />
+        <Carrousel images={imgMans} />
       </div>
     </main>
   );
