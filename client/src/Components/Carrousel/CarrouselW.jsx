@@ -6,13 +6,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 
-const Carrousel = ({images})=>{
+const CarrouselW = ({images})=>{
     const settings = {
       dots: false,
+      rtl: true,
       vertical: true,
       arrows: false,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       autoplay: true,
       speed: 2000,
@@ -27,7 +28,7 @@ const Carrousel = ({images})=>{
         {images.map((image, index) => (
           <div key={index}>
             <img
-              class="object-cover w-[13.53938rem] h-[11.5rem]"
+              class="object-cover w-[14.53938rem] h-[16.5rem]"
               src={image}
               alt={`Image ${index}`}
             />
@@ -41,4 +42,4 @@ const Carrousel = ({images})=>{
 
 
 
-export default Carrousel
+export default CarrouselW
