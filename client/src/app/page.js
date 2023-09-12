@@ -19,8 +19,10 @@ export default function Home() {
           <CarrouselW images={imgWomans} />
         </div>
       </div>
-      <div class="w-screen h-screen shrink-0 flex-col items-center justify-center bg-black">
-        <RouteCard />
+      <div class="w-screen h-screen float flex-col items-center justify-center bg-black p-20">
+        <div class="ml-[14%]">
+          <RouteCard />
+        </div>
       </div>
     </main>
   );
