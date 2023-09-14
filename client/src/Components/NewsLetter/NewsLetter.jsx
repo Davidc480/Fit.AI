@@ -1,4 +1,6 @@
-const NewsLetter =()=>{
+import FormNewsletter from "@/Components/FormNewsletter/FormNewsletter"
+
+const Newsletter = ()=>{
     return (
         <div class="text-white text-center font-montserrat p-20">
             <div>
@@ -12,8 +14,11 @@ const NewsLetter =()=>{
                 <p class="text-2xl">fitness. ¡Únete a nuestra comunidad saludable hoy mismo y comienza a </p>
                 <p class="text-2xl">transformar tu vida!</p>
             </div>
+            <div>
+                <FormNewsletter />
+            </div>
         </div>
     )
 }
 
-export default NewsLetter
+export default Newsletter
