@@ -21,7 +21,8 @@ const FormNewsletter = () => {
   const handleSubmit = (event) => {
     scrollToTop();
     event.preventDefault();
-    setForm({ ...form, email: "" }); // Limpia solo el campo de correo electrónico
+    setForm({ ...form, email: "" });
+    console.log(form.email);
   };
 
   const scrollToTop = () => {
@@ -42,9 +43,9 @@ const FormNewsletter = () => {
 
   const changeHandler = (event) => {
     const { name, value } = event.target;
-    setForm({ ...form, [name]: value }); // Actualiza el estado en tiempo real
+    setForm({ ...form, [name]: value });
 
-    // Validar el correo electrónico aquí y actualizar los errores si es necesario
+
     if (!validateEmail(value)) {
       setErrors({ ...errors, email: "Correo electrónico inválido" });
       setButtonDisabled(true)
@@ -55,13 +56,9 @@ const FormNewsletter = () => {
   };
 
 
-  const clase1 = ""
-  const clase2 = ""
-
-
   return (
     <div>
-      <form class="mt-20  text-white" onSubmit={handleSubmit}>
+      <form class="mt-16 text-white" onSubmit={handleSubmit}>
         <div class="flex items-center justify-center">
           <input
             class="w-[30rem] h-11 text-black p-3 text-lg focus:outline-none font-montserrat font-normal not-italic leading-normal"
@@ -84,10 +81,37 @@ const FormNewsletter = () => {
       </form>
       <div
         ref={topRef}
-        style={{ top: "-1000px", transition: "top 1.5s ease-in-out" }}
+        style={{ top: "-1000px", transition: "top 2.5s ease-in-out" }}
       ></div>
+      <div> {errors.email ?
+      <div class="bg-red-500 text-white font-bold rounded-3xl border border-red-500 p-2 shadow-md w-[18.5rem] ml-[17.7rem] mt-4">
+      <div class="flex items-center">
+        <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        </svg>
+        <p>{errors.email}</p>
+      </div>
+    </div>
+      : 
       <div>
-        <li>{errors.email}</li>
+        <p></p>
+    </div>}
+      </div>
+      <div> {validateEmail(form.email) ?
+      <div class=" bg-green-700 text-white font-bold rounded-3xl border border-green-700 p-2 shadow-md w-[18.5rem] ml-[17.7rem] mt-4">
+      <div class="flex items-center">
+        <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+        </svg>
+        <p>Correo electrónico válido</p>
+      </div>
+    </div>
+      : 
+      <div>
+        <p></p>
+    </div>}
       </div>
     </div>
   );
