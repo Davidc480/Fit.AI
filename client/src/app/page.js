@@ -13,8 +13,8 @@ import imgWomans from "./img/imgWomans";
 export default function Home() {
   return (
     <Provider store={store}>
-      <main class="w-screen h-screen shrink-0 flex-col items-center justify-center bg-gradient-radial">
-        <div class="float-right mt-12 p-12">
+      <main class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
+        <div class=" float-right mt-12 p-12">
           <Header />
         </div>
         <div class="flex">
@@ -25,12 +25,12 @@ export default function Home() {
             <CarrouselW images={imgWomans} />
           </div>
         </div>
-        <div class="w-screen h-5/6 float flex-col items-center justify-center bg-black p-20">
+        <div class="w-full h-5/6 float flex-col items-center justify-center bg-gradient-to-b from-[#090927d9] to-black p-20">
           <div class="ml-[14%]">
             <RouteCard />
           </div>
         </div>
-        <div class="w-screen h-screen shrink-0 flex-col items-center justify-center bg-gradient-radial">
+        <div class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
           <Newsletter />
         </div>
       </main>

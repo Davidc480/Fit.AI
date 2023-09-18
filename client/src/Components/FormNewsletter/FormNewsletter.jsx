@@ -84,7 +84,7 @@ const FormNewsletter = () => {
         style={{ top: "-1000px", transition: "top 2.5s ease-in-out" }}
       ></div>
       <div> {errors.email ?
-      <div class="bg-red-500 text-white font-bold rounded-3xl border border-red-500 p-2 shadow-md w-[18.5rem] ml-[17.7rem] mt-4">
+      <div class="bg-red-500 text-white font-bold rounded-3xl border border-red-500 p-2 shadow-md w-[18.5rem] ml-52 mt-4">
       <div class="flex items-center">
         <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
@@ -99,7 +99,7 @@ const FormNewsletter = () => {
     </div>}
       </div>
       <div> {validateEmail(form.email) ?
-      <div class=" bg-green-700 text-white font-bold rounded-3xl border border-green-700 p-2 shadow-md w-[18.5rem] ml-[17.7rem] mt-4">
+      <div class=" bg-green-700 text-white font-bold rounded-3xl border border-green-700 p-2 shadow-md w-[18.5rem] ml-52 mt-4">
       <div class="flex items-center">
         <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>

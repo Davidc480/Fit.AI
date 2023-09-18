@@ -2,7 +2,7 @@ import FormNewsletter from "@/Components/FormNewsletter/FormNewsletter"
 
 const Newsletter = ()=>{
     return (
-        <div class="text-white text-center font-montserrat p-20">
+        <div class="text-white text-center font-montserrat p-36">
             <div>
                 <h4 class=" text-5xl not-italic font-bold leading-normal inline relative">SUSCRÍBETE
                 <span class="absolute w-1/2 h-1 bg-blue-600 bottom-[-0.3rem] left-1/4"></span>
