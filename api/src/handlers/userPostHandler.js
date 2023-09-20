@@ -1,4 +1,4 @@
-const postUserEmail = require("");
+const postUserEmail = require("../controllers/userPostController");
 const verifyEmailUserExistence = require("../helper/verifyEmailUserExistence");
 const verifyIsEmail = require("../helper/verifyIsEmail");
 
@@ -9,12 +9,14 @@ const userPostHandlers = async (req, res) => {
     if (await verifyIsEmail(email)) {
       if (await verifyEmailUserExistence(email)) {
         const postUser = await postUserEmail(email);
+        res.status(200).json(postUser);
       }
     }
-    res.status(200).json(postUser);
-  } catch (error) {
+  } catch (err) {
     res.status(401).json({
       error: err.message,
     });
   }
 };
+
+module.exports = userPostHandlers;

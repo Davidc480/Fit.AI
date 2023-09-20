@@ -1,13 +1,12 @@
-// "use client";
+import axios from "axios";
+import { HOST } from "@/env";
 
-// import axios from "axios";
+export const POST_EMAIL = "POST_EMAIL";
 
-// export const GET_DOGS = "GET_DOGS";
-
-// export const getDogs = () => {
-//   return async function (dispatch) {
-//     const dogsApi = await axios.get("http://localhost:3001/Dogs");
-//     const dogs = dogsApi.data;
-//     dispatch({ type: GET_DOGS, payload: dogs });
-//   };
-// };
+export const postEmail = () => {
+  return async function (dispatch) {
+    const emailApi = await axios.post(`${HOST}/userEmail`);
+    const email = emailApi.data;
+    dispatch({ type: POST_EMAIL, payload: email });
+  };
+};
