@@ -3,7 +3,7 @@
 import validateEmail from "@/helper/validateEmail";
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { HOST } from "@/env";
+import { postEmail } from "@/redux/actions";
 
 const FormNewsletter = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const FormNewsletter = () => {
     scrollToTop();
     event.preventDefault();
     setForm({ ...form, email: "" });
-    console.log(HOST);
+    dispatch(postEmail(form.email))
   };
 
   const scrollToTop = () => {

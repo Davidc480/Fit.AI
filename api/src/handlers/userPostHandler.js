@@ -6,12 +6,14 @@ const userPostHandlers = async (req, res) => {
   const { email } = req.body;
 
   try {
-    if (await verifyIsEmail(email)) {
-      if (await verifyEmailUserExistence(email)) {
+    if (verifyIsEmail(email)) {
+      if (!(await verifyEmailUserExistence(email))) {
         const postUser = await postUserEmail(email);
         res.status(200).json(postUser);
+        return;
       }
     }
+    throw new Error("Correo electrónico inválido");
   } catch (err) {
     res.status(401).json({
       error: err.message,

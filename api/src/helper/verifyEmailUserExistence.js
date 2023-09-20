@@ -4,8 +4,10 @@ const verifyEmailUserExistence = async (email) => {
   const userEmail = await User.findOne({
     where: { email },
   });
-
-  return !!userEmail;
+  if (userEmail) {
+    throw new Error("Correo electrónico ya registrado");
+  }
+  return false;
 };
 
 module.exports = verifyEmailUserExistence;
