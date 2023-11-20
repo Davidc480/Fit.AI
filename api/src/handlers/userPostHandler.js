@@ -15,7 +15,7 @@ const userPostHandlers = async (req, res) => {
     }
     throw new Error("Correo electrónico inválido");
   } catch (err) {
-    res.status(401).json({
+    res.status(400).json({
       error: err.message,
     });
   }
