@@ -26,6 +26,7 @@ dist-ssr
 # dotenv environment variables file
 server/.env
 client/.env
+.next/
 
 # package-lock.json
 server/package-lock.json
