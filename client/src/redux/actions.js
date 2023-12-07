@@ -11,7 +11,6 @@ export const postEmail = (email) => {
         email: email,
       });
       const { user } = response.data;
-      console.log(user);
       dispatch({ type: POST_EMAIL, payload: user });
     } catch (err) {
       dispatch({ type: ERROR, payload: err });
