@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 
 const Header = ()=>{
     return (
@@ -20,7 +20,7 @@ const Header = ()=>{
             primer paso que das fuera de tu zona de confort."
           </p>
           <button class="w-[16rem] h-[3rem] rounded-[2.69019rem] bg-[#4F81FF] text-white font-montserrat text-xl font-normal leading-normal mt-20">
-            Comienza ahora
+            <Link href="/form">Comienza ahora</Link>
           </button>
         </div>
     )
