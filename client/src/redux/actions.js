@@ -7,7 +7,9 @@ export const ERROR = "ERROR";
 export const postEmail = (email) => {
   return async function (dispatch) {
     try {
-      const response = await axios.post(`${HOST}/userEmail`, { email: email });
+      const response = await axios.post(`${HOST}/userEmail`, {
+        email: email,
+      });
       const { user } = response.data;
       console.log(user);
       dispatch({ type: POST_EMAIL, payload: user });
