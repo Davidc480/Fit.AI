@@ -9,6 +9,7 @@ import RouteCard from "@/Components/RouteCard/RouteCard";
 import Newsletter from "@/Components/Newsletter/Newsletter";
 import imgMans from "@/app/img/imgMan";
 import imgWomans from "./img/imgWomans";
+import Footer from "@/Components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
         </div>
         <div class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
           <Newsletter />
+        </div>
+        <div>
+          <Footer />
         </div>
       </main>
     </Provider>

@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         SlateBlue: "rgba(52, 48, 111, 0.80)",
+        darkGreen: "#004040",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
