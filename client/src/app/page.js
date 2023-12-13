@@ -14,24 +14,24 @@ import Footer from "@/Components/Footer/Footer";
 export default function Home() {
   return (
     <Provider store={store}>
-      <main class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
-        <div class=" float-right mt-12 p-12">
+      <main class="w-full h-full shrink-0 flex flex-col items-center justify-center bg-gradient-radial">
+        <div class="">
           <Header />
         </div>
         <div class="h-full flex">
-          <div class="w-1/2 pt-6 pl-8">
+          <div class="w-1/2 pt-6 pl-4">
             <Carrousel images={imgMans} />
           </div>
-          <div class="w-1/2 pt-10 pl-6">
+          <div class="w-1/2 pt-[4.4rem]">
             <CarrouselW images={imgWomans} />
           </div>
         </div>
         <div class="w-full h-5/6 float flex-col items-center justify-center bg-gradient-to-b from-[#090927d9] to-black p-20">
-          <div class="ml-[14%]">
+          <div>
             <RouteCard />
           </div>
         </div>
-        <div class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
+        <div class="w-full h-full shrink-0 flex flex-col items-center justify-center bg-gradient-radial">
           <Newsletter />
         </div>
         <div>
@@ -41,3 +41,34 @@ export default function Home() {
     </Provider>
   );
 }
+
+// export default function Home() {
+//   return (
+//     <Provider store={store}>
+//       <main class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
+//         <div class=" float-right mt-12 p-12">
+//           <Header />
+//         </div>
+//         <div class="h-full flex">
+//           <div class="w-1/2 pt-6 pl-8">
+//             <Carrousel images={imgMans} />
+//           </div>
+//           <div class="w-1/2 pt-10 pl-6">
+//             <CarrouselW images={imgWomans} />
+//           </div>
+//         </div>
+//         <div class="w-full h-5/6 float flex-col items-center justify-center bg-gradient-to-b from-[#090927d9] to-black p-20">
+//           <div class="ml-[14%]">
+//             <RouteCard />
+//           </div>
+//         </div>
+//         <div class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial">
+//           <Newsletter />
+//         </div>
+//         <div>
+//           <Footer />
+//         </div>
+//       </main>
+//     </Provider>
+//   );
+// }
