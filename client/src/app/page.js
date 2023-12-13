@@ -18,7 +18,7 @@ export default function Home() {
         <div class=" float-right mt-12 p-12">
           <Header />
         </div>
-        <div class="flex">
+        <div class="h-full flex">
           <div class="w-1/2 pt-6 pl-8">
             <Carrousel images={imgMans} />
           </div>

@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         SlateBlue: "rgba(52, 48, 111, 0.80)",
         darkGreen: "#004040",
+        darkRose: "#C5356F",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],

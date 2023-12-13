@@ -19,7 +19,7 @@ const Header = ()=>{
           <p class="text-white mb-2 font-montserrat text-[1.25rem] font-bold leading-normal">
             primer paso que das fuera de tu zona de confort."
           </p>
-          <button class="w-[16rem] h-[3rem] rounded-[2.69019rem] bg-[#4F81FF] text-white font-montserrat text-xl font-normal leading-normal mt-20">
+          <button class="w-[16rem] h-[3rem] rounded-[2.69019rem] bg-darkGreen text-white font-montserrat text-xl font-normal leading-normal mt-20">
             <Link href="/form">Comienza ahora</Link>
           </button>
         </div>
