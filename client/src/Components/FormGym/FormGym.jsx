@@ -21,21 +21,21 @@ const FormGym = () => {
 
           {currentPage === 1 && (
               <div>
-                <div class="max-w-xl mx-auto text-center text-white font-inter text-2xl not-italic font-bold leading-normal -mt-48">
+                <div class="max-w-xl mx-auto text-center text-white font-inter text-2xl not-italic font-bold leading-normal">
                     <p>¡Felicidades! ahora estas a un <span class="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span></p>
                 </div>
-                <div class="ml-4 mt-24">
-                    <p class="font-montserrat text-4xl not-italic font-bold leading-normal">TU NOMBRE</p>
+                <div class="ml-10 mt-10">
+                    <p class=" mb-12 font-montserrat text-3xl not-italic font-bold leading-normal">TU NOMBRE</p>
                 </div>
                 <div>
                     <form>
                         <div>
-                            <input type="text" class="ml-4 w-80 bg-transparent  border-b-2 border-b-white focus:ring-0 focus:outline-none" placeholder="Escribe algo aquí"/>
+                            <input type="text" class="ml-10 w-72 bg-transparent border-b-2 border-b-white focus:ring-0 focus:outline-none" placeholder="Tu nombre aquí"/>
                         </div>
                     </form>
                 </div>
-                <div>
-                    <button onClick={nextPage}>Siguiente</button>
+                <div class="text-center">
+                    <button class="mt-20 w-40 h-10 shrink-0 rounded-[2rem] bg-darkGreen transform hover:scale-110 duration-300" onClick={nextPage}>Siguiente</button>
                 </div>
             </div>
           )}
