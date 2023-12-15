@@ -21,16 +21,16 @@ const FormGym = () => {
 
           {currentPage === 1 && (
               <div>
-                <div class="max-w-xl mx-auto text-center text-white font-inter text-2xl not-italic font-bold leading-normal">
+                <div class="max-w-xl xl:max-w-[70rem] mx-auto text-center text-white font-inter text-2xl xl:text-4xl not-italic font-bold leading-normal mt-24">
                     <p>¡Felicidades! ahora estas a un <span class="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span></p>
                 </div>
-                <div class="ml-10 mt-10">
-                    <p class=" mb-12 font-montserrat text-3xl not-italic font-bold leading-normal">TU NOMBRE</p>
+                <div class="ml-10 mt-10 xl:mt-24">
+                    <p class=" mb-12 font-montserrat text-3xl xl:text-4xl not-italic font-bold leading-normal">TU NOMBRE</p>
                 </div>
                 <div>
                     <form>
                         <div>
-                            <input type="text" class="ml-10 w-72 bg-transparent border-b-2 border-b-white focus:ring-0 focus:outline-none" placeholder="Tu nombre aquí"/>
+                            <input type="text" class="ml-10 w-full bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none xl:text-4xl" placeholder="Tu nombre aquí"/>
                         </div>
                     </form>
                 </div>
@@ -55,27 +55,6 @@ const FormGym = () => {
 
 export default FormGym;
 
-// import { useState } from 'react';
-// import MenuForm from '../MenuForm/MenuForm'
-
-
-// const FormGym = () => {
-//     const [currentPage, setCurrentPage] = useState(1);
-
-//     const nextPage = () => setCurrentPage(currentPage + 1);
-//     const prevPage = () => setCurrentPage(currentPage - 1);
-//         return (
-    
-      
-//         <div class=" text-white w-full flex-grow flex items-center justify-center ">
-//             <div>
-//                 <MenuForm />
-//             </div>
-
-//             <div >
-
-//           {currentPage === 1 && (
-//               <div>
 //                 <div class="flex text-white font-inter text-6xl not-italic font-bold leading-normal -mt-48">
 //                     <p class="-ml-6 mr-2">¡Felicidades! ahora estas a un</p>
 //                     <p class="mr-2 text-darkRose">paso</p>

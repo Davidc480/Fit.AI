@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const Header = ()=>{
     return (
-        <div class=" p-7 text-center items-center">
+        <div class="p-7 xl:mr-14 xl:mt-14 text-center items-center">
           <h1>
             <span class="font-inter text-white text-5xl font-bold leading-normal ">
               ¡Bienvenido a
@@ -13,12 +13,12 @@ const Header = ()=>{
               Fit.AI!
             </span>
           </h1>
+          <div class=" max-w-xl mx-auto text-center">
           <p class="text-white font-montserrat text-[1.25rem] font-bold leading-normal mt-12">
             "El camino hacia el éxito en el fitness comienza con el
-          </p>
-          <p class="text-white mb-2 font-montserrat text-[1.25rem] font-bold leading-normal">
             primer paso que das fuera de tu zona de confort."
           </p>
+          </div>
           <Link href="/form">
             <button class="w-[16rem] h-[3rem] rounded-[2.69019rem] bg-darkGreen text-white font-montserrat text-xl font-normal leading-normal mt-14 transform hover:scale-105 duration-300 hover:bg-[rgb(0,52,62)]">
             Comienza ahora

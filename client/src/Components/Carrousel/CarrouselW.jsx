@@ -28,7 +28,7 @@ const CarrouselW = ({images})=>{
         {images.map((image, index) => (
           <div key={index}>
             <img
-              class="object-cover w-40 h-44"
+              class="object-cover w-40 h-44 xl:w-56 xl:h-64"
               src={image}
               alt={`Image ${index}`}
             />
