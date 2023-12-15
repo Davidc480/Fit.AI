@@ -21,21 +21,21 @@ const Carrousel = ({images})=>{
       cssEase: "linear"
       };
 
-      return (
-        <div class="w-auto h-full">
-        <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img
-              class="object-cover w-40 h-36  xl:w-[13.53938rem] xl:h-[11.5rem]"
-              src={image}
-              alt={`Image ${index}`}
-            />
-          </div>
-        ))}
-        </Slider>
-        </div>
-      );
+return (
+  <div class="w-full h-full flex justify-center items-center">
+  <Slider {...settings}>
+  {images.map((image, index) => (
+    <div class="flex justify-center items-center h-full" key={index}>
+      <img
+        class="object-cover w-40 h-36  xl:w-[13.53938rem] xl:h-[11.5rem] "
+        src={image}
+        alt={`Image ${index}`}
+      />
+    </div>
+  ))}
+  </Slider>
+  </div>
+);
 
 }
 

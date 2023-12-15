@@ -23,10 +23,10 @@ const CarrouselW = ({images})=>{
       };
 
       return (
-        <div class="w-auto h-full">
+        <div class="w-auto h-full flex justify-center items-center">
         <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index}>
+          <div class="flex justify-center items-center h-full" key={index}>
             <img
               class="object-cover w-40 h-44 xl:w-56 xl:h-64"
               src={image}

@@ -14,16 +14,16 @@ import Footer from "@/Components/Footer/Footer";
 export default function Home() {
   return (
     <Provider store={store}>
-      <main class="w-full h-full shrink-0 flex-col items-center justify-center bg-gradient-radial  ">
+      <main class="w-full h-full 2xl:h-screen shrink-0 flex-col items-center justify-center bg-gradient-radial  ">
         <div class="xl:float-right xl:mt-12 xl:p12">
           <Header />
         </div>
 
-        <div class="h-full flex">
-          <div class="w-1/2 pt-6 pl-4 xl:pl-8">
+        <div class="h-full flex items-center justify-center pl-4 xl:pl-8 2xl:pl-20">
+          <div class="">
             <Carrousel images={imgMans} />
           </div>
-          <div class="w-1/2 pt-[4.4rem] xl:pt-16 xl:pl-6">
+          <div class="xl:pt-16 xl:pl-6">
             <CarrouselW images={imgWomans} />
           </div>
         </div>
