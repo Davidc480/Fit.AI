@@ -11,12 +11,19 @@ const ButtonFormIa = ()=>{
   const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
     return(
         <div>
-                <div>
-                <button class="mt-20 w-40 h-10 shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-110 duration-300" onClick={nextPage}>Siguiente</button>
+            <div>
+                {currentPage != 9 &&
+                    <button class="mt-20 w-40 h-10 shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-110 duration-300" onClick={nextPage}>Siguiente</button>
+                }
             </div>
             <div>
-                {currentPage > 1 &&
+                {currentPage > 1  &&
                     <button class="mt-20 w-40 h-10 shrink-0 rounded-[2rem] bg-darkGreen transform hover:scale-110 duration-300" onClick={prevPage}>Anterior</button>
+                }
+            </div>
+            <div>
+                {currentPage >= 9 &&
+                    <button class="mt-20 w-40 h-10 shrink-0 rounded-[2rem] bg-darkGreen transform hover:scale-110 duration-300">Finalizar</button>
                 }
             </div>
         </div>
