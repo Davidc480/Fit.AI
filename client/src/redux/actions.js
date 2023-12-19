@@ -3,6 +3,7 @@ import { HOST } from "@/env";
 
 export const POST_EMAIL = "POST_EMAIL";
 export const ERROR = "ERROR";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
 export const postEmail = (email) => {
   return async function (dispatch) {
@@ -17,3 +18,8 @@ export const postEmail = (email) => {
     }
   };
 };
+
+export const setCurrentPage = (page) => ({
+  type: SET_CURRENT_PAGE,
+  payload: page,
+});

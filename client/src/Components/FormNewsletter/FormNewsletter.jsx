@@ -61,10 +61,10 @@ const FormNewsletter = () => {
 
   return (
     <div>
-      <form class="mt-16 text-white" onSubmit={handleSubmit}>
+      <form class="mt-16 2xl:mt-20 text-white" onSubmit={handleSubmit}>
         <div class="flex items-center justify-center">
           <input
-            class=" w-52 h-11 xl:w-[30rem] text-black p-3  text-sm xl:text-lg focus:outline-none font-montserrat font-normal not-italic leading-normal"
+            class=" w-52 h-11 xl:w-[30rem] 2xl:w-[38rem] 2xl:h-14 text-black p-3  text-sm xl:text-lg focus:outline-none font-montserrat font-normal not-italic leading-normal"
             type="email"
             name="email"
             placeholder="Correo electrónico"
@@ -73,7 +73,7 @@ const FormNewsletter = () => {
           />
 
           <button
-            class=" w-28 h-11 xl:w-36  border-darkGreen bg-darkGreen p-1 text-center  text-[0.65rem] xl:text-xs not-italic font-montserrat font-bold leading-normal transition duration-300 ease-in-out transform hover:scale-105 text-white hover:bg-gray-900 hover:border-gray-900"
+            class=" w-28 h-11 xl:w-36 2xl:w-52 2xl:h-14 border-darkGreen bg-darkGreen p-1 text-center  text-[0.65rem] xl:text-xs 2xl:text-base not-italic font-montserrat font-bold leading-normal transition duration-300 ease-in-out transform hover:scale-105 text-white hover:bg-gray-900 hover:border-gray-900"
             type="submit"
             onClick={handleSubmit}
             disabled={buttonDisabled}
@@ -121,44 +121,3 @@ const FormNewsletter = () => {
 };
 
 export default FormNewsletter;
-
-
-
-// ref={topRef}
-// style={{ top: "-1000px", transition: "top 2.5s ease-in-out" }}
-// ></div>
-// <div> {errors.email ?
-// <div class="bg-red-500 text-white font-bold rounded-3xl border border-red-500 p-2 shadow-md w-[18.5rem] ml-52 mt-4">
-// <div class="flex items-center">
-// <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-//   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
-//   <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
-// </svg>
-// <p>{errors.email}</p>
-// </div>
-// </div>
-// : 
-// <div>
-// <p></p>
-// </div>}
-// </div>
-// <div> {validateEmail(form.email) ?
-// <div class=" bg-green-700 text-white font-bold rounded-3xl border border-green-700 p-2 shadow-md w-[18.5rem] ml-52 mt-4">
-// <div class="flex items-center">
-// <svg class="w-6 h-6 text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-//   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01"></path>
-//   <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
-// </svg>
-// <p>Correo electrónico válido</p>
-// </div>
-// </div>
-// : 
-// <div>
-// <p></p>
-// </div>}
-// </div>
-// </div>
-// );
-// };
-
-// export default FormNewsletter;

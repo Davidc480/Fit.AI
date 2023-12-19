@@ -19,20 +19,20 @@ export default function Home() {
           <Header />
         </div>
 
-        <div class="h-full flex items-center justify-center pl-4 xl:pl-8 2xl:pl-20">
+        <div class="h-full flex items-center justify-center pt-8 pl-4 xl:pl-8 2xl:pl-20">
           <div class="">
             <Carrousel images={imgMans} />
           </div>
-          <div class="xl:pt-16 xl:pl-6">
+          <div class="">
             <CarrouselW images={imgWomans} />
           </div>
         </div>
-        <div class="w-full h-5/6 flex flex-col xl:flex-row items-center justify-center bg-gradient-to-b from-[#090927d9] to-black p-20">
+        <div class="w-full h-5/6 2xl:h-[37rem] flex flex-col clearfix xl:flex-row items-center justify-center bg-gradient-to-b from-[#090927d9] to-black p-20">
           <div class="xl:mb-32">
             <RouteCard />
           </div>
         </div>
-        <div class="w-full h-full shrink-0 flex flex-col items-center justify-center bg-gradient-radial">
+        <div class="w-full h-full 2xl:h-[43rem] shrink-0 flex flex-col items-center justify-center bg-gradient-radial">
           <Newsletter />
         </div>
         <div>

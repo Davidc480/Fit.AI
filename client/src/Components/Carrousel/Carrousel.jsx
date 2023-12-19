@@ -27,7 +27,7 @@ return (
   {images.map((image, index) => (
     <div class="flex justify-center items-center h-full" key={index}>
       <img
-        class="object-cover w-40 h-36  xl:w-[13.53938rem] xl:h-[11.5rem] "
+        class="object-cover w-40 h-36  xl:w-[13.53938rem] xl:h-[11.5rem] 2xl:w-64 2xl:h-80"
         src={image}
         alt={`Image ${index}`}
       />
