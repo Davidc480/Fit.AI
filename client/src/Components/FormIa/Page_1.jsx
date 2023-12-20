@@ -5,11 +5,11 @@ import ButtonFormIa from "../ButtonFormIa/ButtonFormIa"
 
 const PageOne = () =>{
     return (
-        <div class="flex flex-col h-screen p-5">
-        <div class="text-center text-white font-inter text-2xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal mt-24">
+        <div class="flex flex-col relative h-full p-5">
+        <div class="text-center text-white font-inter text-2xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal mt-24 xl:mt-12">
                     <p>¡Felicidades! ahora estas a un <span class="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span></p>
                 </div>
-                <div class="mt-10 xl:mt-24 2xl:mt-36">
+                <div class="mt-10 xl:mt-12 2xl:mt-36">
                     <p class=" text-left mb-12 2xl:mb-32 font-montserrat text-3xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal">TU NOMBRE</p>
                 </div>
                 <div>
@@ -19,7 +19,7 @@ const PageOne = () =>{
                         </div>
                     </form>
                 </div>
-                <div >
+                <div class="absolute bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa />
                 </div>
         </div>
