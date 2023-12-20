@@ -10,10 +10,10 @@ const ButtonFormIa = ()=>{
   const nextPage = () => dispatch(setCurrentPage(currentPage + 1));
   const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
     return(
-        <div>
-            <div>
+        <div class="flex flex-col justify-center mt-auto">
+            <div class="">
                 {currentPage != 9 &&
-                    <button class="mt-20 w-40 h-10 xl:w-72 xl:h-14 xl:text-3xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Siguiente</button>
+                    <button class=" w-40 h-10 xl:w-72 xl:h-14 xl:text-3xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Siguiente</button>
                 }
             </div>
             <div>
