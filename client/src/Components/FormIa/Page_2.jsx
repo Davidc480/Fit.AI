@@ -1,29 +1,40 @@
 import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
 
-const PageTwo = ()=>{
-    return(
-        <div class="flex flex-col relative h-full p-5">
-           <div class="text-center text-white font-inter text-2xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal mt-24 xl:mt-12">
-                <p>¡Felicidades! ahora estas a un <span class="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span></p>
-            </div>
-            <div>
-                <div>
-                    <p>Edad</p>
-                </div>
-                <div>
-                    <input type="number" />
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Genero</p>
-                </div>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 flex justify-center">
-                    <ButtonFormIa />
-            </div>
+const PageTwo = () => {
+  return (
+    <div class="flex flex-col justify-center h-full p-5 text-white ">
+      <p class="text-center font-inter 2xl:-translate-y-24 text-2xl xl:text-4xl 2xl:text-6xl font-bold leading-normal mb-12 2xl:mb-0">
+        ¡Felicidades! ahora estás a un <span className="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span>
+      </p>
+
+      <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-28 2xl:space-x-72 ">
+        <div class="mb-6 xl:mb-0 xl:w-[32rem] 2xl:w-[42.5rem]">
+          <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl font-bold leading-normal mb-4">Edad</p>
+          <input type="number" class="no-spinners w-full  bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-xl xl:text-4xl" placeholder="Ingrese su edad"/>
         </div>
-    )
+        <div class="">
+          <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl font-bold leading-normal">Género</p>
+          <div class="flex mt-10">
+            <div class="flex mr-4 2xl:mr-24">
+              <input type="radio" id="hombre" name="genero" value="hombre" class="w-5 h-5  cursor-pointer"/>
+              <label htmlFor="hombre"></label>
+              <span class="ml-2 2xl:ml-4 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Hombre</span>
+            </div>
+            <div class="flex items-center">
+              <input type="radio"  name="genero" value="mujer" class="w-5 h-5  cursor-pointer" />
+              <label htmlFor="mujer"></label>
+              <span class="ml-2 2xl:ml-4 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Mujer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center w-full absolute bottom-5 xl:relative xl:bottom-auto">
+        <ButtonFormIa />
+      </div>
+    </div>
+  );
 }
 
 export default PageTwo;
+

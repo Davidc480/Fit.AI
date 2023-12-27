@@ -35,4 +35,15 @@ body {
         .bg-gradient-radial {
             background: radial-gradient(50% 50.00% at 50% 50.00%, rgb(var(--bg-color)),  rgb(var(--bg-black)));
         }
+
+        .no-spinners::-webkit-inner-spin-button,
+        .no-spinners::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        .no-spinners {
+          appearance: none;
+          -moz-appearance: textfield;
+        }
       }
