@@ -28,7 +28,7 @@ const CarrouselW = ({images})=>{
         {images.map((image, index) => (
           <div class="flex justify-center items-center  h-full" key={index}>
             <img
-              class="object-cover w-40 h-44 xl:w-56 xl:h-64 2xl:w-80 2xl:h-[28rem]"
+              class="object-cover w-40 h-44 xl:w-56 xl:h-64 2xl:w-80 2xl:h-[27rem]"
               src={image}
               alt={`Image ${index}`}
             />

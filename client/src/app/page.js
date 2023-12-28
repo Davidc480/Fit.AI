@@ -19,7 +19,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div class="h-full flex items-center justify-center pt-8 pl-4 xl:pl-8 2xl:pl-20">
+        <div class="h-full flex items-center justify-center pt-8 pl-4 xl:pl-8 2xl:pl-20 2xl:pt-4">
           <div class="">
             <Carrousel images={imgMans} />
           </div>

@@ -7,12 +7,12 @@ const PageTwo = () => {
         ¡Felicidades! ahora estás a un <span className="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span>
       </p>
 
-      <div class="flex flex-col xl:flex-row xl:items-center xl:space-x-28 2xl:space-x-72 ">
+      <div class="flex flex-col xl:flex-row xl:translate-x-16 2xl:translate-x-24">
         <div class="mb-6 xl:mb-0 xl:w-[32rem] 2xl:w-[42.5rem]">
           <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl font-bold leading-normal mb-4">Edad</p>
           <input type="number" class="no-spinners w-full  bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-xl xl:text-4xl" placeholder="Ingrese su edad"/>
         </div>
-        <div class="">
+        <div class="xl:ml-36 2xl:ml-60">
           <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl font-bold leading-normal">Género</p>
           <div class="flex mt-10">
             <div class="flex mr-4 2xl:mr-24">
