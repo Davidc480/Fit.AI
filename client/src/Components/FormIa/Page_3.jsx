@@ -13,7 +13,7 @@ const PageThree = ()=>{
                     </div>
                     <div class="w-68 mt-8 xl:mt-0 xl:ml-12">
                     <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal">Peso</p>
-                    <div class="flex items-end xl:translate-y-7 2xl:translate-y-16">
+                    <div class="mr-6 flex items-end xl:translate-y-7 2xl:translate-y-16">
                         <input type="number" id="kilos" class="no-spinners  text-center w-full  bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-4xl" placeholder="Ingrese su peso"/>
                         <label htmlFor="kilos" class="translate-x-4 xl:text-2xl 2xl:text-4xl">Kg</label>
                     </div>

@@ -3,8 +3,45 @@ import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
 const PageFour = ()=>{
     return(
         <div class="flex flex-col relative h-full p-5">
-            <div> 
-                <h1>Página 4</h1>
+            <div class="flex flex-col"> 
+                <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal text-center">¿Cuál es tu objetivo principal?</p>
+                <div class="xl:flex xl:gap-9 xl:items-center xl:justify-center mt-4 xl:mt-10  mb-8 xl:mb-14 ml-10">
+                    <div class="flex justify-start mb-3 xl:mb-0">
+                        <input type="radio" name="objetivo" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Pérdida de peso</label>
+                    </div>
+                    <div class="flex justify-start mb-3 xl:mb-0">
+                        <input type="radio" name="objetivo" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Ganancia muscular</label>
+                    </div>
+                <div class="flex justify-start mb-3 xl:mb-0">
+                    <input type="radio" name="objetivo" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                    <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Mejora de la energía</label>
+                </div>
+                    <div class="flex justify-start">
+                        <input type="radio" name="objetivo" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Cambio en la figura</label>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal text-center">¿Cuál es tu nivel de experiencia entrenando?</p>
+                <div class="xl:flex xl:items-center xl:justify-center mt-4 xl:mt-10">
+                    <div class="flex items-center justify-center">
+                        <div class="mr-9">
+                            <input type="radio" name="experiencia" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                            <label htmlFor="experiencia" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Principiante</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="experiencia" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                            <label htmlFor="experiencia" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Intermedio</label>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center mt-4 xl:mt-0">
+                        <input type="radio" name="experiencia" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 xl:ml-9" />
+                        <label htmlFor="experiencia" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Avanzado</label>
+                    </div>
+                </div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa />
