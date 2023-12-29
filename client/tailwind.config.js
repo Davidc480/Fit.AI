@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         SlateBlue: "rgba(52, 48, 111, 0.80)",
+        lightBlue: "rgba(173, 216, 230)",
         darkGreen: "#004040",
         darkRose: "#C5356F",
       },

@@ -10,7 +10,7 @@ const PageOne = () =>{
                     <p>¡Felicidades! ahora estas a un <span class="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span></p>
                 </div>
                 <div class="mt-10 xl:mt-12 2xl:mt-24">
-                    <p class=" text-left mb-12 2xl:mb-22 font-montserrat text-3xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal">Nombre</p>
+                    <p class=" text-left mb-12 2xl:mb-22 font-montserrat text-3xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal text-lightBlue">Nombre</p>
                 </div>
                 <div>
                     <form >
