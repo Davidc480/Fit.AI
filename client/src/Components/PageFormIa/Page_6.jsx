@@ -21,7 +21,7 @@ const PageSix = ()=>{
             </div>
             <div>
                 <div class=" translate-y-8 xl:translate-y-12 2xl:translate-y-4 2xl:mt-24">
-                <p class="font-montserrat text-xl xl:text-2xl 2xl:text-6xl not-italic font-bold leading-normal text-center text-lightBlue">¿Cuantos dias a la semana puedes entrenar?</p>
+                <p class="font-montserrat text-xl xl:text-2xl 2xl:text-6xl not-italic font-bold leading-normal text-center text-lightBlue">¿Donde prefieres entrenar?</p>
                     <div class="flex justify-center mt-4 xl:mt-8 2xl:mt-16 ml-8">
                         <input type="radio" name="entrenamiento" class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="entrenamiento" class="ml-2 mr-8 xl:mr-20 2xl:ml-4 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal ">Casa</label>
