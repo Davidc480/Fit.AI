@@ -2,15 +2,15 @@
 
 import { useSelector } from 'react-redux';
 import MenuForm from '../MenuForm/MenuForm'
-import PageOne from '../FormIa/Page_1';
-import PageTwo from '../FormIa/Page_2';
-import PageThree from '../FormIa/Page_3';
-import PageFour from '../FormIa/Page_4';
-import PageFive from '../FormIa/Page_5';
-import PageSix from '../FormIa/Page_6';
-import PageSeven from '../FormIa/Page_7';
-import PageEight from '../FormIa/Page_8';
-import PageNineEnd from '../FormIa/Page_9_Final';
+import PageOne from '../PageFormIa/Page_1';
+import PageTwo from '../PageFormIa/Page_2';
+import PageThree from '../PageFormIa/Page_3';
+import PageFour from '../PageFormIa/Page_4';
+import PageFive from '../PageFormIa/Page_5';
+import PageSix from '../PageFormIa/Page_6';
+import PageSeven from '../PageFormIa/Page_7';
+import PageEight from '../PageFormIa/Page_8';
+import PageNineEnd from '../PageFormIa/Page_9_Final';
 
 
 const FormGym = () => {
