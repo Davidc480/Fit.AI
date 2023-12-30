@@ -4,7 +4,7 @@ const PageFive = ()=>{
     return(
         <div class="flex flex-col relative h-full p-5">
             <div class="2xl:w-[90rem]"> 
-                <p class="font-montserrat text-xl xl:text-4xl 2xl:text-6xl not-italic font-bold leading-normal text-center text-lightBlue">¿Tienes algún plazo específico para alcanzar tus objetivos?</p>
+                <p class="font-montserrat text-xl xl:text-3xl 2xl:text-6xl not-italic font-bold leading-normal text-center text-lightBlue">¿Tienes algún plazo específico para alcanzar tus objetivos?</p>
             </div>
             <div class="flex mt-8 xl:mt-14 2xl:mt-24 ml-14 xl:ml-20 gap-10">
                 <div>
