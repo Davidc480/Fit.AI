@@ -17,7 +17,7 @@ const FormGym = () => {
     const currentPage = useSelector(state => state.currentPage)
 
         return (
-        <div class=" text-white w-full h-full flex flex-col items-center justify-center ">
+        <div class="text-white w-full h-full flex flex-col items-center justify-center ">
             <div>
                 <MenuForm />
             </div>

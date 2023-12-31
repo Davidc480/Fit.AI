@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        loading: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        loading: "loading 9s forwards cubic-bezier(0, 0, 0, 0)",
+        bounceFour: "bounce 1.2s ease-out 8 forwards",
+      },
       colors: {
         SlateBlue: "rgba(52, 48, 111, 0.80)",
         lightBlue: "rgba(173, 216, 230)",
