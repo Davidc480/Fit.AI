@@ -30,7 +30,7 @@ const PageThree = ()=>{
                     <input type="text" id="estatura" placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-5xl" />
                 </div>
             </div>
-            <div class="absolute bottom-0 left-0 right-0 flex justify-center">
+            <div class=" bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa />
             </div>
         </div>

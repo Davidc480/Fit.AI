@@ -29,7 +29,7 @@ const PageTwo = () => {
         </div>
       </div>
 
-      <div class="flex justify-center w-full absolute bottom-5 xl:relative xl:bottom-auto">
+      <div class="bottom-0 left-0 right-0 flex justify-center">
         <ButtonFormIa />
       </div>
     </div>

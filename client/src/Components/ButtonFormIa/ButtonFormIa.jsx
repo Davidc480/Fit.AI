@@ -14,18 +14,18 @@ const ButtonFormIa = ()=>{
         justify-center" >
             <div class="fixed bottom-20 xl:bottom-20 2xl:bottom-36
          justify-center left-8 xl:left-28 z-10" >
-                {currentPage > 1  &&
+                {currentPage >= 2 && currentPage <= 8 && 
                     <button class="w-20 h-8 xl:w-40 xl:h-9 shrink-0 rounded-full xl:rounded-[2rem] text-xs xl:text-xl bg-darkGreen transform hover:-translate-x-4 duration-700 hover:text-darkRose" onClick={prevPage}>← Anterior</button>
                 }
             </div>
             <div>
-                {currentPage != 9 &&
+                {currentPage >= 1 && currentPage <= 7 &&
                     <button class="w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Siguiente</button>
                 }
             </div>
             <div >
-                {currentPage >= 9 &&
-                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700">Finalizar</button>
+                {currentPage == 8 &&
+                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Finalizar</button>
                 }
             </div>
         </div>
