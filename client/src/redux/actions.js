@@ -4,6 +4,7 @@ import { HOST } from "@/env";
 export const POST_EMAIL = "POST_EMAIL";
 export const ERROR = "ERROR";
 export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+export const UPDATE_USER_INFO = "UPDATE_USER_INFO";
 
 export const postEmail = (email) => {
   return async function (dispatch) {
@@ -22,4 +23,9 @@ export const postEmail = (email) => {
 export const setCurrentPage = (page) => ({
   type: SET_CURRENT_PAGE,
   payload: page,
+});
+
+export const updateUserInfo = (inputKey, value) => ({
+  type: UPDATE_USER_INFO,
+  payload: { inputKey, value },
 });

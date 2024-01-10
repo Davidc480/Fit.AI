@@ -1,31 +1,38 @@
 'use client'
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPage } from "../../redux/actions"; 
+import { setCurrentPage, updateUserInfo } from "../../redux/actions"; 
 
 
-const ButtonFormIa = ()=>{
+const ButtonFormIa = ({ enabled, inputKey, value, page })=>{
     const dispatch = useDispatch();
-  const currentPage = useSelector((state) => state.currentPage);
+    const currentPage = useSelector((state) => state.currentPage);
+    const state =useSelector((state)=> state.userInfo)
 
-  const nextPage = () => dispatch(setCurrentPage(currentPage + 1));
-  const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
+const handleSubmit = () => {
+        dispatch(setCurrentPage(currentPage + 1))
+        dispatch(updateUserInfo(inputKey, value))
+        console.log(state);
+
+};
+
+const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
     return(
         <div class="fixed bottom-24 xl:bottom-24 2xl:bottom-36
         justify-center" >
             <div class="fixed bottom-20 xl:bottom-20 2xl:bottom-36
          justify-center left-8 xl:left-28 z-10" >
-                {currentPage >= 2 && currentPage <= 8 && 
+                {currentPage >= 2 && currentPage <= 10 && 
                     <button class="w-20 h-8 xl:w-40 xl:h-9 shrink-0 rounded-full xl:rounded-[2rem] text-xs xl:text-xl bg-darkGreen transform hover:-translate-x-4 duration-700 hover:text-darkRose" onClick={prevPage}>← Anterior</button>
                 }
             </div>
             <div>
                 {currentPage >= 1 && currentPage <= 7 &&
-                    <button class="w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Siguiente</button>
+                    <button class="w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit} disabled={!enabled} page={page} >Siguiente</button>
                 }
             </div>
             <div >
                 {currentPage == 8 &&
-                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={nextPage}>Finalizar</button>
+                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit}>Finalizar</button>
                 }
             </div>
         </div>

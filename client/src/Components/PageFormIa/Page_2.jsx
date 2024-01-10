@@ -1,6 +1,18 @@
+'use client'
+
 import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
+import { useState } from "react";
 
 const PageTwo = () => {
+
+  const [valueInput, setValueInput] = useState(false);
+  const [errors, setErrors] = useState("");
+
+  const handleChange =(e)=>{
+    console.log(e.target.value);
+
+  }
+
   return (
     <div class="flex flex-col justify-center h-full p-5 text-white">
       <p class="text-center font-inter 2xl:-translate-y-24 text-2xl xl:text-4xl 2xl:text-6xl font-bold leading-normal mb-12 2xl:mb-0">
@@ -16,12 +28,12 @@ const PageTwo = () => {
           <p class="font-montserrat text-xl xl:text-3xl 2xl:text-6xl font-bold leading-normal text-lightBlue">Género</p>
           <div class="flex mt-10">
             <div class="flex mr-4 2xl:mr-24">
-              <input type="radio" id="hombre" name="genero" value="hombre" class="xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 cursor-pointer"/>
+              <input type="radio" id="hombre" name="genero" value="hombre" onChange={handleChange} class="xl:w-4 xl:h-4 2xl:w-8 2xl:h-8 cursor-pointer"/>
               <label htmlFor="hombre"></label>
               <span class="ml-2 2xl:ml-4 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Hombre</span>
             </div>
             <div class="flex items-center">
-              <input type="radio"  name="genero" value="mujer" class="xl:w-4 xl:h-4 2xl:w-8 2xl:h-8  cursor-pointer" />
+              <input type="radio"  name="genero" value="mujer" onChange={handleChange} class="xl:w-4 xl:h-4 2xl:w-8 2xl:h-8  cursor-pointer" />
               <label htmlFor="mujer"></label>
               <span class="ml-2 2xl:ml-4 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Mujer</span>
             </div>
@@ -30,7 +42,7 @@ const PageTwo = () => {
       </div>
 
       <div class="bottom-0 left-0 right-0 flex justify-center">
-        <ButtonFormIa />
+        <ButtonFormIa enabled={!!valueInput.enabled} inputKey="name" value={valueInput.value} />
       </div>
     </div>
   );
