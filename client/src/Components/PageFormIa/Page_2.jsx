@@ -1,9 +1,10 @@
 'use client'
 
 import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import validatePage_2 from "@/helper/validateForm/validatePage_2";
 import validatePage_2b from "@/helper/validateForm/validatePage_2b";
+
 
 const PageTwo = () => {
 
@@ -15,32 +16,32 @@ const PageTwo = () => {
     const { name, value } = e.target;
 if(name === "edad"){
   if(validatePage_2(value).valid){
-    setValueInput({enabled: true, ...valueInput, [name]: value})
+    setValueInput(prevState => ({ ...prevState, [name]: value}))
     setErrorsEdad("")
   } else {
     setErrorsEdad(validatePage_2(value).error)
-    setValueInput({enabled: false, edad:0, genero: "",})
+    setValueInput(prevState =>({...prevState, enabled: false, edad:0,}))
   }
 }
 
-if(name === "genero"){
-  if(validatePage_2b(value).valid){
-    setValueInput({enabled: true, ...valueInput, [name]: value})
-    setErrorsGenero("")
+  if(name === "genero"){
+    if(validatePage_2b(value).valid){
+      setValueInput(prevState => ({ ...prevState, [name]: value}))
+      setErrorsGenero("")
+    } else {
+      setErrorsGenero(validatePage_2b(value).error)
+      setValueInput(prevState =>({...prevState, enabled: false, genero: "",}))
+    }
+  }
+}
+
+useEffect(() => {
+  if (valueInput.edad && valueInput.genero) {
+    setValueInput(prevState => ({ ...prevState, enabled: true }));
   } else {
-    setErrorsGenero(validatePage_2b(value).error)
-    setValueInput({enabled: false, edad:0, genero: "",})
+    setValueInput(prevState => ({ ...prevState, enabled: false }));
   }
-}
-
-
-  
-
-      // setErrors(validatePage_2(e.target.value).error)
-      // setValueInput({enabled: false, value: "",})
-  
-
-  }
+}, [valueInput.edad, valueInput.genero]);
 
   return (
     <div class="flex flex-col justify-center h-full p-5 text-white">
