@@ -25,7 +25,7 @@ export const setCurrentPage = (page) => ({
   payload: page,
 });
 
-export const updateUserInfo = (inputKey, value) => ({
+export const updateUserInfo = (pair) => ({
   type: UPDATE_USER_INFO,
-  payload: { inputKey, value },
+  payload: pair,
 });

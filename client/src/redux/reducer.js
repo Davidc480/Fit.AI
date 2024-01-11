@@ -33,13 +33,26 @@ const rootReducer = (state = initialState, action) => {
     case SET_CURRENT_PAGE:
       return { ...state, currentPage: action.payload };
     case UPDATE_USER_INFO:
-      return {
+      const keys = Object.keys(action.payload);
+      const firstKey = keys[0];
+      const firstValue = action.payload[firstKey];
+
+      const newState = {
         ...state,
         userInfo: {
           ...state.userInfo,
-          [action.payload.inputKey]: action.payload.value,
+          [firstKey]: firstValue,
         },
       };
+      console.log(newState.userInfo);
+      return newState;
+    // return {
+    //   ...state,
+    //   userInfo: {
+    //     ...state.userInfo,
+    //     [firstKey]: firstValue,
+    //   },
+    // };
 
     default:
       return { ...state };

@@ -3,15 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentPage, updateUserInfo } from "../../redux/actions"; 
 
 
-const ButtonFormIa = ({ enabled, inputKey, value, page })=>{
+const ButtonFormIa = ({ enabled, keyValuePairs, page })=>{
     const dispatch = useDispatch();
     const currentPage = useSelector((state) => state.currentPage);
     const state =useSelector((state)=> state.userInfo)
 
 const handleSubmit = () => {
+    // console.log(keyValuePairs);
         dispatch(setCurrentPage(currentPage + 1))
-        dispatch(updateUserInfo(inputKey, value))
-        console.log(state);
+        keyValuePairs.forEach(pair => {
+            dispatch(updateUserInfo(pair));
+          });
+        // console.log(state);
 
 };
 
@@ -40,4 +43,6 @@ const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
     )
 }
 
-export default ButtonFormIa
+export default ButtonFormIa;
+
+// disabled={!enabled}
