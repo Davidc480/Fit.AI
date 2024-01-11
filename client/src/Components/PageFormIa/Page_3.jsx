@@ -2,10 +2,12 @@
 
 import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
 import { useState, useEffect } from "react";
+// import { onInputRadio, overwrite } from "@/helper/onInputRadio";
 
 const PageThree = ()=>{
 
     const [valueInput, setValueInput] = useState({enabled: false, estatura: 0, peso: 0, lesion: "",});
+    const [isRadioChecked, setIsRadioChecked] = useState(false)
     const [errorEstatura, setErrorEstatura] = useState("");
     const [errorPeso, setErrorPeso] = useState("");
 
@@ -20,8 +22,8 @@ const handleChange = (e)=>{
             const valorCombinado = Number(estatura1) + "." + Number(estatura2);
             setValueInput(prevState=>({...prevState, estatura: valorCombinado,}))
             setErrorEstatura("");
-            console.log(valueInput);
         } else {
+            setValueInput(prevState=>({...prevState, enabled: false,}))
             setErrorEstatura("Debe ser una estatura valida entre 1.10 cm y 1.90 cm");
         }
     }
@@ -31,12 +33,19 @@ const handleChange = (e)=>{
         setValueInput(prevState=>({...prevState, peso: value}))
         setErrorPeso("")
     } else {
-        console.log(errorPeso);
+        setValueInput(prevState=>({...prevState, enabled: false,}))
         setErrorPeso("Debe ser un peso valido entre 20 Kg y 90 Kg");
       }
     }
-    if(name === "ninguna" || name === "lesion"){
+    if(name === "ninguna"){
         if(value){
+            setValueInput(prevState=>({...prevState, lesion: value}))
+            setErrorPeso("")
+        }
+    }
+    if(name === "text"){
+        if(value){
+            setIsRadioChecked(false)
             setValueInput(prevState=>({...prevState, lesion: value}))
             setErrorPeso("")
         }
@@ -80,13 +89,13 @@ useEffect(() => {
                     <p class="text-center items-center font-montserrat text-lg xl:text-2xl 2xl:text-4xl not-italic font-semibold leading-normal text-lightBlue">¿Tienes alguna condición médica relevante? (Problemas cardíacos, lesiones, etc.)</p>
                 </div>
                 <div class="mt-8 ml-8 xl:mt-10 xl:ml-20 2xl:mt-16">
-                    <input type="radio" name="ninguna" value="ninguna" onChange={handleChange} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
+                    <input type="radio" id="radio" name="ninguna" value="ninguna" checked={isRadioChecked} onClick={() => {setIsRadioChecked(!isRadioChecked); !isRadioChecked ? document.getElementById ("text").value = "" : null ;}} onChange={handleChange} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
                     <label htmlFor="ninguna" class="ml-4 2xl:ml-8 font-montserrat text-sm xl:text-2xl 2xl:text-4xl not-italic font-semibold leading-normal">Ninguna</label>
-                    <input type="text" id="estatura" name="lesion" onChange={handleChange} placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-5xl" />
+                    <input type="text" id="text" name="text" onChange={handleChange}  placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-5xl" />
                 </div>
             </div>
             <div class=" bottom-0 left-0 right-0 flex justify-center">
-                    <ButtonFormIa />
+                    <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{estatura: valueInput.estatura}, {peso: valueInput.peso}, {lesion: valueInput.lesion}]}/>
             </div>
         </div>
     )
