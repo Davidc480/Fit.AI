@@ -12,7 +12,7 @@ const PageThree = ()=>{
     const [errorPeso, setErrorPeso] = useState("");
 
 const handleChange = (e)=>{
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     const estatura1 = document.getElementById('estatura1').value;
     const estatura2 = document.getElementById('estatura2').value;
