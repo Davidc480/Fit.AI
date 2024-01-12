@@ -89,7 +89,7 @@ useEffect(() => {
                     <p class="text-center items-center font-montserrat text-lg xl:text-2xl 2xl:text-4xl not-italic font-semibold leading-normal text-lightBlue">¿Tienes alguna condición médica relevante? (Problemas cardíacos, lesiones, etc.)</p>
                 </div>
                 <div class="mt-8 ml-8 xl:mt-10 xl:ml-20 2xl:mt-16">
-                    <input type="radio" id="radio" name="ninguna" value="ninguna" checked={isRadioChecked} onClick={() => {setIsRadioChecked(!isRadioChecked); !isRadioChecked ? document.getElementById ("text").value = "" : null ;}} onChange={handleChange} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
+                    <input type="radio" id="radio" name="ninguna" value="ninguna" checked={isRadioChecked} onClick={() => {setIsRadioChecked(!isRadioChecked); !isRadioChecked ? document.getElementById("text").value = "" : null ;}} onChange={handleChange} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
                     <label htmlFor="ninguna" class="ml-4 2xl:ml-8 font-montserrat text-sm xl:text-2xl 2xl:text-4xl not-italic font-semibold leading-normal">Ninguna</label>
                     <input type="text" id="text" name="text" onChange={handleChange}  placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-5xl" />
                 </div>

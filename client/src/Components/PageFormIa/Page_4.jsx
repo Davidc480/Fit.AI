@@ -7,15 +7,13 @@ const PageFour = ()=>{
 
     const [valueInput, setValueInput] = useState({enabled: false, valueObjetivo: "", valueLevel: "",});
 
-    const handleChange = (e)=>{
+    const handleChange = (e) =>{
         const { name, value } = e.target;
         if(name === "objetivo"){
             setValueInput(prevState=>({...prevState, valueObjetivo: value,}))
-            console.log(valueInput);
         }
         if(name === "experiencia"){
             setValueInput(prevState=>({...prevState, valueLevel: value}))
-            console.log(valueInput);
         }
     }
 
