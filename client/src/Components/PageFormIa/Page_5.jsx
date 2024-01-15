@@ -25,6 +25,8 @@ const PageFive = ()=>{
             setValueInput(prevState=>({...prevState, plazo: value}))
             setError("")
         }
+
+        
     }
 
     useEffect(() => {
@@ -39,8 +41,14 @@ const PageFive = ()=>{
         }
       }, [valueInput.plazo, isTextChecked]);
 
+      const handleSubmit = (e)=>{
+        e.preventDefault();
+      }
+
+
     return(
         <div class="flex flex-col relative h-full p-5">
+          <form onSubmit={handleSubmit} id="miFormulario">
             <div class="2xl:w-[90rem]"> 
                 <p class="font-montserrat text-xl xl:text-3xl 2xl:text-6xl not-italic font-bold leading-normal text-center text-lightBlue">¿Tienes algún plazo específico para alcanzar tus objetivos?</p>
             </div>
@@ -60,6 +68,7 @@ const PageFive = ()=>{
                 <input type="radio" value="Da un plazo acorde a los objetivos y metas del usuario" onChange={handleChange} checked={isRadioChecked} onClick={()=>{ setIsRadioChecked(!isRadioChecked); !isRadioChecked ?  setIsTextChecked(true): setIsTextChecked(false)}} name="plazo" class="cursor-pointer mr-2 xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                 <label htmlFor="plazo" class="font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">No, Dejar que la IA defina el tiempo para alcanzar mi objetivo.</label>
             </div>
+          </form>
             <div class="absolute bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{plazo: valueInput.plazo}]} />
             </div>

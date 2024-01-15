@@ -51,6 +51,10 @@ const handleChange = (e)=>{
     }
 }
 
+const handleSubmit = (e)=>{
+    e.preventDefault();
+  }
+
 useEffect(() => {
     if (valueInput.estatura && valueInput.peso && valueInput.lesion) {
       setValueInput(prevState => ({ ...prevState, enabled: true }));
@@ -61,7 +65,8 @@ useEffect(() => {
 
     return(
         <div class="flex flex-col relative h-full 2xl:-mt-10 p-5 text-white">
-            <div> 
+        <form onSubmit={handleSubmit} id="miFormulario">
+            <div>
                 <div class="flex flex-col xl:flex-row ml-8">
                     <p class="font-montserrat text-xl xl:text-2xl 2xl:text-5xl not-italic font-bold leading-normal text-lightBlue">Estatura</p>
                     <div class="flex items-end xl:-translate-x-24 2xl:-translate-x-48 xl:translate-y-7 2xl:translate-y-16">
@@ -93,6 +98,7 @@ useEffect(() => {
                     <input type="text" id="text" name="text" onChange={handleChange}  placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-5xl" />
                 </div>
             </div>
+        </form>
             <div class=" bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{estatura: valueInput.estatura}, {peso: valueInput.peso}, {lesion: valueInput.lesion}]}/>
             </div>

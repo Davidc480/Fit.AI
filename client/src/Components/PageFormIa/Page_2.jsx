@@ -6,6 +6,7 @@ import validatePage_2 from "@/helper/validateForm/validatePage_2";
 import validatePage_2b from "@/helper/validateForm/validatePage_2b";
 
 
+
 const PageTwo = () => {
 
   const [valueInput, setValueInput] = useState({enabled: false, edad: 0, genero: "",});
@@ -33,6 +34,7 @@ if(name === "edad"){
       setValueInput(prevState =>({...prevState, enabled: false, genero: "",}))
     }
   }
+
 }
 
 useEffect(() => {
@@ -43,14 +45,20 @@ useEffect(() => {
   }
 }, [valueInput.edad, valueInput.genero]);
 
+const handleSubmit = (e)=>{
+  e.preventDefault();
+}
+
   return (
     <div class="flex flex-col justify-center h-full p-5 text-white">
       <p class="text-center font-inter 2xl:-translate-y-24 text-2xl xl:text-4xl 2xl:text-6xl font-bold leading-normal mb-12 2xl:mb-0">
         ¡Felicidades! ahora estás a un <span className="text-darkRose">paso</span> más cerca de tu <span class="text-darkRose">meta</span>
       </p>
 
+    <form onSubmit={handleSubmit} id="miFormulario">
       <div class="flex flex-col xl:flex-row xl:translate-x-16 2xl:translate-x-24">
         <div class="mb-6 xl:mb-0 xl:w-[32rem] 2xl:w-[42.5rem]">
+
           <p class="font-montserrat text-xl xl:text-2xl 2xl:text-5xl font-bold leading-normal mb-4 text-lightBlue">Edad</p>
           <input type="number" class="no-spinners w-full  bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-xl xl:text-2xl 2xl:text-5xl" placeholder="Ingrese su edad" name="edad" onChange={handleChange}/>
           <p class="mt-3 ml-4 text-red-500 font-montserrat font-bold leading-normal not-italic">{errorsEdad}</p>
@@ -72,6 +80,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
+    </form>
 
       <div class="bottom-0 left-0 right-0 flex justify-center">
         <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{edad:valueInput.edad}, {genero:valueInput.genero}]} />

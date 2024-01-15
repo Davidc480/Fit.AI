@@ -25,8 +25,13 @@ const PageFour = ()=>{
         }
       }, [valueInput.valueObjetivo, valueInput.valueLevel]);
 
+      const handleSubmit = (e)=>{
+        e.preventDefault();
+      }
+
     return(
         <div class="flex flex-col relative h-full p-5">
+          <form onSubmit={handleSubmit} id="miFormulario">
             <div class="flex flex-col"> 
                 <p class="font-montserrat text-xl xl:text-3xl 2xl:text-6xl not-italic font-bold leading-normal text-center 2xl:mb-8 text-lightBlue">¿Cuál es tu objetivo principal?</p>
                 <div class="xl:flex xl:gap-9 xl:items-center xl:justify-center mt-4 xl:mt-10  mb-8 xl:mb-14 2xl:mb-28 ml-10">
@@ -67,6 +72,7 @@ const PageFour = ()=>{
                     </div>
                 </div>
             </div>
+          </form>
             <div class="absolute bottom-0 left-0 right-0 flex justify-center">
                     <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{objetivo: valueInput.valueObjetivo}, {nivelExperiencia: valueInput.valueLevel}]}/>
             </div>
