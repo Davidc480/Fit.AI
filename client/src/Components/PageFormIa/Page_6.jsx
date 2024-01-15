@@ -36,6 +36,7 @@ const PageSix = ()=>{
         }
         
     }
+    
     useEffect(() => {
         if (valueInput.diasEntrenamiento && valueInput.tiempoLibre && valueInput.preferenciaEntrenamiento) {
           setValueInput(prevState => ({ ...prevState, enabled: true }));

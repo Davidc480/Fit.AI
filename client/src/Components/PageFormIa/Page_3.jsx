@@ -2,7 +2,6 @@
 
 import ButtonFormIa from "../ButtonFormIa/ButtonFormIa";
 import { useState, useEffect } from "react";
-// import { onInputRadio, overwrite } from "@/helper/onInputRadio";
 
 const PageThree = ()=>{
 
