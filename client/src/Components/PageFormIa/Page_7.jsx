@@ -36,7 +36,6 @@ const PageSeven = ()=>{
                 setCheckedExerciseNone(false)
                 break;
             case 'Ninguna':
-                // Desmarcar todos los otros si se selecciona "Ninguna"
                 if (!checkedExerciseNone) {
                     setCheckedExerciseOne(false);
                     setCheckedExerciseTwo(false);
@@ -53,7 +52,7 @@ const PageSeven = ()=>{
     const handleChange = (e) => {
         const { name, value } = e.target;
         const startsWithLetterRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)*/;
-        
+
         if(name === "text"){
             if(startsWithLetterRegex.test(value)){
                 setValueInput(prevState => ({...prevState, actividadFisica: value}))
@@ -63,11 +62,69 @@ const PageSeven = ()=>{
                 setError("Porfavor ingresa un deporte valido.")
             }
         }
+
+        if(name === "ningunDeporte"){
+            setValueInput(prevState=>({...prevState, actividadFisica: value}))
+        }
+
+    if(name === "Cardiovascular"){
+        if(!checkedExerciseOne){
+            if(!valueInput.preferenciaEjercicios.includes("Cardiovascular")){
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Cardiovascular"] }))
+            }
+        } else {
+                setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Cardiovascular")}))
+        }
+    }
+
+    if(name === "Levantamiento de pesas"){
+        if(!checkedExerciseTwo){
+            if(!valueInput.preferenciaEjercicios.includes("Levantamiento de pesas")){
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Levantamiento de pesas"] }))
+            }
+        } else {
+                setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Levantamiento de pesas")}))
+        }
+    }
+
+    if(name === "Yoga"){
+        if(!checkedExerciseThree){
+            if(!valueInput.preferenciaEjercicios.includes("Yoga")){
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Yoga"] }))
+            }
+        } else {
+                setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Yoga")}))
+        }
+    }
+    
+    if(name === "Calistenia"){
+        if(!checkedExerciseFour){
+            if(!valueInput.preferenciaEjercicios.includes("Calistenia")){
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Calistenia"] }))
+            }
+        } else {
+                setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Calistenia")}))
+        }
+    }
+
+    if(name === "Ninguna"){
+        if(!checkedExerciseNone){
+            if(!valueInput.preferenciaEjercicios.includes("Ninguna")){
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: ["Ninguna"] }))
+            }
+        } else {
+                setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna")}))
+        }
+    }
+        
+        
+        console.log(valueInput);
+        // console.log(checkedExerciseNone);
         
     }
 
     useEffect(() => {
-        if (valueInput.diasEntrenamiento && valueInput.tiempoLibre && valueInput.preferenciaEntrenamiento) {
+        if (valueInput.actividadFisica && valueInput.preferenciaEjercicios ) {
           setValueInput(prevState => ({ ...prevState, enabled: true }));
         } else {
           setValueInput(prevState => ({ ...prevState, enabled: false }));
@@ -76,16 +133,23 @@ const PageSeven = ()=>{
             document.getElementById("text").value = "";
             setError("")
         }
-      }, [valueInput.diasEntrenamiento, valueInput.tiempoLibre, valueInput.preferenciaEntrenamiento, isRadioChecked]);
+      }, [valueInput.actividadFisica, valueInput.preferenciaEjercicios, ]);
+
+
+
+      const handleSubmit = (e)=>{
+        e.preventDefault;
+      }
 
     return(
         <div class="flex flex-col relative h-full p-5 ">
+        <form onSubmit={handleSubmit}>
             <div class="mt-10 xl:mt-12 2xl:mt-20 flex flex-col items-center">
                 <div class="2xl:w-[102rem]">
                     <p class="text-center items-center font-montserrat text-xl xl:text-2xl 2xl:text-5xl not-italic font-semibold leading-normal text-lightBlue">¿Practicas alguna actividad física adicional? (Deportes, yoga, etc.)</p>
                 </div>
                 <div class="mt-8 ml-8 xl:mt-10 xl:ml-20 2xl:mt-16">
-                    <input type="radio" name="ninguna" value="ninguna" onChange={handleChange} checked={isRadioChecked} onClick={()=>{setIsRadioChecked(!isRadioChecked); !isRadioChecked ? setIsTextChecked(true) : setIsTextChecked(false)}} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
+                    <input type="radio" name="ningunDeporte" value="ninguna" onChange={handleChange} checked={isRadioChecked} onClick={()=>{setIsRadioChecked(!isRadioChecked); !isRadioChecked ? setIsTextChecked(true) : setIsTextChecked(false)}} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8"/>
                     <label htmlFor="ninguna" class="ml-4 2xl:ml-8 font-montserrat text-sm xl:text-2xl 2xl:text-4xl not-italic font-semibold leading-normal">Ninguna</label>
                     <input type="text" name="text" id="text" onChange={handleChange} disabled={isTextChecked} placeholder="Describala" class="ml-6 xl:ml-20 no-spinners w-48 xl:w-[44rem] bg-transparent border-b-2 xl:border-b-4 border-b-white focus:ring-0 focus:outline-none text-lg xl:text-2xl 2xl:text-4xl" />
                 </div>
@@ -95,29 +159,30 @@ const PageSeven = ()=>{
                 <p class="font-montserrat text-xl xl:text-2xl 2xl:text-5xl not-italic font-bold leading-normal text-center 2xl:mb-8 text-lightBlue mt-8 2xl:mt-20 ">¿Tienes alguna preferencia por ciertos tipos de ejercicio?</p>
                 <div class="xl:flex xl:gap-9 xl:items-center xl:justify-center mt-4 xl:mt-10  mb-8 xl:mb-14 2xl:mb-28 ml-10">
                     <div class="flex justify-start mb-3 xl:mb-0">
-                        <input type="checkbox" name="ejercicios" checked={checkedExerciseOne} onClick={() => handleExerciseChange('Cardiovascular')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <input type="checkbox" name="Cardiovascular" onChange={handleChange} checked={checkedExerciseOne} onClick={() => handleExerciseChange('Cardiovascular')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Cardiovascular</label>
                     </div>
                     <div class="flex justify-start mb-3 xl:mb-0">
-                        <input type="checkbox" name="ejercicios" checked={checkedExerciseTwo} onClick={() => handleExerciseChange('Levantamiento de pesas')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <input type="checkbox" name="Levantamiento de pesas" onChange={handleChange} checked={checkedExerciseTwo} onClick={() => handleExerciseChange('Levantamiento de pesas')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Levantamiento de pesas</label>
                     </div>
                     <div class="flex justify-start mb-3 xl:mb-0">
-                        <input type="checkbox" name="ejercicios" checked={checkedExerciseThree} onClick={() => handleExerciseChange('Yoga')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <input type="checkbox" name="Yoga" onChange={handleChange} checked={checkedExerciseThree} onClick={() => handleExerciseChange('Yoga')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Yoga</label>
                     </div>
                     <div class="flex justify-start mb-3 xl:mb-0">
-                        <input type="checkbox" name="ejercicios" checked={checkedExerciseFour} onClick={() => handleExerciseChange('Calistenia')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <input type="checkbox" name="Calistenia" onChange={handleChange} checked={checkedExerciseFour} onClick={() => handleExerciseChange('Calistenia')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Calistenia</label>
                     </div>
                     <div class="flex justify-start">
-                        <input type="checkbox" name="ejercicios" checked={checkedExerciseNone} onClick={() => handleExerciseChange('Ninguna')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
+                        <input type="checkbox" name="Ninguna" onChange={handleChange} checked={checkedExerciseNone} onClick={() => handleExerciseChange('Ninguna')} class="cursor-pointer xl:w-4 xl:h-4 2xl:w-8 2xl:h-8" />
                         <label htmlFor="objetivo" class="ml-2 font-montserrat text-sm xl:text-base 2xl:text-3xl font-bold leading-normal">Ninguna</label>
                     </div>
                 </div>
             </div>
+        </form>
             <div class="absolute bottom-0 left-0 right-0 flex justify-center">
-                    <ButtonFormIa />
+                    <ButtonFormIa enabled={!!valueInput.enabled} keyValuePairs={[{actividadFisica: valueInput.actividadFisica}, {preferenciaEjercicios: valueInput.preferenciaEjercicios}]} />
             </div>
         </div>
     )
