@@ -37,10 +37,8 @@ const handleChange = (e)=>{
       }
     }
     if(name === "ninguna"){
-        if(value){
-            setValueInput(prevState=>({...prevState, lesion: value}))
-            setErrorPeso("")
-        }
+        setValueInput(prevState=>({...prevState, lesion: value}))
+        setErrorPeso("")
     }
     if(name === "text"){
         if(value){
@@ -49,6 +47,8 @@ const handleChange = (e)=>{
             setErrorPeso("")
         }
     }
+
+    console.log(valueInput);
 }
 
 const handleSubmit = (e)=>{
@@ -56,12 +56,17 @@ const handleSubmit = (e)=>{
   }
 
 useEffect(() => {
+    const name = document.getElementById("text").value
+
     if (valueInput.estatura && valueInput.peso && valueInput.lesion) {
       setValueInput(prevState => ({ ...prevState, enabled: true }));
     } else {
       setValueInput(prevState => ({ ...prevState, enabled: false }));
     }
-  }, [valueInput.estatura, valueInput.peso, valueInput.lesion]);
+    if(!isRadioChecked && name === ""){
+        setValueInput(prevState=>({...prevState, lesion: ""}))
+    }
+  }, [isRadioChecked, valueInput.estatura, valueInput.peso, valueInput.lesion]);
 
     return(
         <div class="flex flex-col relative h-full 2xl:-mt-10 p-5 text-white">

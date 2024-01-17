@@ -13,6 +13,7 @@ const PageFive = ()=>{
 
     const handleChange = (e) =>{
         const {name, value} = e.target;
+        
         if(name === "text"){
             if(value >= 3 && value <= 12){
                 setValueInput(prevState=>({...prevState, plazo: `Quiero lograr mi objetivo en ${value} meses`}))

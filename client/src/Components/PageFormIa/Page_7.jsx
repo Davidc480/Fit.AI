@@ -64,13 +64,13 @@ const PageSeven = ()=>{
         }
 
         if(name === "ningunDeporte"){
-            setValueInput(prevState=>({...prevState, actividadFisica: value}))
+                setValueInput(prevState=>({...prevState, actividadFisica: value}))
         }
 
     if(name === "Cardiovascular"){
         if(!checkedExerciseOne){
             if(!valueInput.preferenciaEjercicios.includes("Cardiovascular")){
-                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Cardiovascular"] }))
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna"), "Cardiovascular"] }))
             }
         } else {
                 setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Cardiovascular")}))
@@ -80,7 +80,7 @@ const PageSeven = ()=>{
     if(name === "Levantamiento de pesas"){
         if(!checkedExerciseTwo){
             if(!valueInput.preferenciaEjercicios.includes("Levantamiento de pesas")){
-                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Levantamiento de pesas"] }))
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna"), "Levantamiento de pesas"] }))
             }
         } else {
                 setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Levantamiento de pesas")}))
@@ -90,7 +90,7 @@ const PageSeven = ()=>{
     if(name === "Yoga"){
         if(!checkedExerciseThree){
             if(!valueInput.preferenciaEjercicios.includes("Yoga")){
-                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Yoga"] }))
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna"), "Yoga"] }))
             }
         } else {
                 setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Yoga")}))
@@ -100,7 +100,7 @@ const PageSeven = ()=>{
     if(name === "Calistenia"){
         if(!checkedExerciseFour){
             if(!valueInput.preferenciaEjercicios.includes("Calistenia")){
-                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios, "Calistenia"] }))
+                setValueInput(prevState=>({...prevState, preferenciaEjercicios: [...prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna"), "Calistenia"] }))
             }
         } else {
                 setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Calistenia")}))
@@ -115,15 +115,13 @@ const PageSeven = ()=>{
         } else {
                 setValueInput(prevState =>({...prevState, preferenciaEjercicios: prevState.preferenciaEjercicios.filter(ejercicio => ejercicio !== "Ninguna")}))
         }
-    }
-        
-        
-        console.log(valueInput);
-        // console.log(checkedExerciseNone);
-        
-    }
+    }   
+}
 
     useEffect(() => {
+
+        const name = document.getElementById("text").value;
+
         if (valueInput.actividadFisica && valueInput.preferenciaEjercicios ) {
           setValueInput(prevState => ({ ...prevState, enabled: true }));
         } else {
@@ -133,7 +131,10 @@ const PageSeven = ()=>{
             document.getElementById("text").value = "";
             setError("")
         }
-      }, [valueInput.actividadFisica, valueInput.preferenciaEjercicios, ]);
+        if(!isRadioChecked && name === ""){
+            setValueInput(prevState=>({...prevState, actividadFisica: ""}))
+        }
+      }, [isTextChecked, valueInput.actividadFisica, valueInput.preferenciaEjercicios, ]);
 
 
 

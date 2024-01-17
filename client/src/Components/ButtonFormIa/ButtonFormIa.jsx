@@ -26,12 +26,12 @@ const prevPage = () => dispatch(setCurrentPage(currentPage - 1));
             </div>
             <div>
                 {currentPage >= 1 && currentPage <= 7 &&
-                    <button class="w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit} disabled={!enabled} page={page} >Siguiente</button>
+                    <button class="w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit}  page={page} >Siguiente</button>
                 }
             </div>
             <div >
                 {currentPage == 8 &&
-                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit}>Finalizar</button>
+                    <button class=" w-32 h-10 xl:w-60 xl:h-12 xl:text-2xl shrink-0 rounded-[2rem]  bg-darkGreen transform hover:scale-105 xl:hover:scale-110  hover:text-darkRose duration-700" onClick={handleSubmit} disabled={!enabled} >Finalizar</button>
                 }
             </div>
         </div>
