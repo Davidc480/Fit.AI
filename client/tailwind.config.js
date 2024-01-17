@@ -13,6 +13,10 @@ module.exports = {
           "100%": { width: "100%" },
         },
       },
+      parpadeo: {
+        "0%, 100%": { opacity: 1 },
+        "50%": { opacity: 0.5 },
+      },
       animation: {
         loading: "loading 9s forwards cubic-bezier(0, 0, 0, 0)",
         bounceFour: "bounce 1.2s ease-out 8 forwards",
